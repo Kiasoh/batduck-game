@@ -13,6 +13,14 @@ public enum BatmanState
 /// </summary>
 public class BatmanController : MonoBehaviour
 {
+    [Header("Stealth/Alert FX")]
+    public Light redLight;
+    public Light blueLight;
+    public AudioSource alarmSource;
+    private float flashTimer = 0f;
+    private bool isRedActive = false;
+    private const float FLASH_RATE = 0.2f;
+
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
 
@@ -25,11 +33,25 @@ public class BatmanController : MonoBehaviour
     public BatmanState currentState = BatmanState.Normal;
 
     private float currentSpeed;
+    void Start()
+    {
+        if (alarmSource != null)
+        {
+            alarmSource.Stop();
+            alarmSource.loop = true; 
+        }
+        SetAlertLights(false);
+        SetNormalLights(true);
+    }
 
     void Update()
     {
         HandleInputForStates();
         HandleMovement();
+        if (currentState == BatmanState.Alert)
+        {
+            HandleAlertFlashingLights();
+        }
     }
     /// <summary>
     /// Handles input for changing states.
@@ -58,6 +80,26 @@ public class BatmanController : MonoBehaviour
     {
         currentState = newState;
         Debug.Log($"State Changed to: {currentState}");
+        switch (currentState)
+        {
+            case BatmanState.Normal:
+                SetAlertLights(false); 
+                StopAlarm();
+                // SetNormalLights(true); 
+                break;
+
+            case BatmanState.Stealth:
+                SetAlertLights(false); 
+                StopAlarm();
+                // SetNormalLights(false);
+                break;
+
+            case BatmanState.Alert:
+                SetAlertLights(true);
+                PlayAlarm();
+                // SetNormalLights(true); 
+                break;
+        }
 
     }
     /// <summary>
@@ -95,6 +137,77 @@ public class BatmanController : MonoBehaviour
             case BatmanState.Stealth:
                 currentSpeed = moveSpeed * stealthSpeedMultiplier;
                 break;
+        }
+    }
+
+    /// <summary>
+    /// handles the flashing lights during alert state
+    /// </summary>
+    private void HandleAlertFlashingLights()
+    {
+        flashTimer += Time.deltaTime;
+
+        if (flashTimer >= FLASH_RATE)
+        {
+            // Toggle the active light
+            isRedActive = !isRedActive;
+
+            // Turn off the previous light and turn on the new one
+            redLight.enabled = isRedActive;
+            blueLight.enabled = !isRedActive;
+
+            flashTimer = 0f; // Reset timer
+        }
+    }
+
+    /// <summary>
+    /// sets the alert lights
+    /// </summary>
+    private void SetAlertLights(bool enable)
+    {
+        if (redLight != null) redLight.enabled = enable && isRedActive;
+        if (blueLight != null) blueLight.enabled = enable && !isRedActive;
+        // If turned off, make sure to reset the timer as well
+        if (!enable)
+        {
+            flashTimer = 0f;
+            isRedActive = false;
+        }
+    }
+    
+    /// <summary>
+    /// sets the normal lights
+    /// </summary>
+    private void SetNormalLights(bool enable)
+    {
+        // foreach (Light light in normalLights)
+        // {
+        //     if (light != null)
+        //     {
+        //         light.enabled = enable;
+        //     }
+        // }
+    }
+
+    /// <summary>
+    /// plays the alarm sound
+    /// </summary>
+    private void PlayAlarm()
+    {
+        if (alarmSource != null && !alarmSource.isPlaying)
+        {
+            alarmSource.Play();
+        }
+    }
+
+    /// <summary>
+    /// stops the alarm sound
+    /// </summary>
+    private void StopAlarm()
+    {
+        if (alarmSource != null && alarmSource.isPlaying)
+        {
+            alarmSource.Stop();
         }
     }
 }
