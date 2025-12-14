@@ -54,4 +54,7 @@ the Duckmobile controls are the same as the BatDuck.`LSHIFT` is used as handbrak
 ## A Quick And Bad Demonstration
 
 ![](showcase1.mp4)
+<video src="./showcase1.mp4" controls preload></video>
+
 ![](showcase2.mp4)
+<video src="./showcase2.mp4" controls preload></video>
