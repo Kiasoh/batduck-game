@@ -50,3 +50,8 @@ the Duckmobile controls are the same as the BatDuck.`LSHIFT` is used as handbrak
 ### Duck Signal
 
 * A bicon that displayes the Bat Signal on the sky with subtle movements.
+
+## A Quick And Bad Demonstration
+
+![](showcase1.mp4)
+![](showcase2.mp4)
