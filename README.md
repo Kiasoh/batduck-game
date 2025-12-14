@@ -57,4 +57,4 @@ the Duckmobile controls are the same as the BatDuck.`LSHIFT` is used as handbrak
 <video src="https://github.com/kiasoh/batduck-game/master/showcase1.mp4" controls preload></video>
 
 ![](./showcase2.mp4)
-<video src="https://github.com/Kiasoh/batduck-game/blob/master/showcase2.mp4" controls preload></video>
+<video src="https://github.com/Kiasoh/batduck-game/showcase2.mp4" controls preload></video>
