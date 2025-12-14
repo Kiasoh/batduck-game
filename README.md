@@ -8,6 +8,10 @@ this game is a very simple and fun implementation of batman in a universe where 
 
 Sadly, the city of Duckham has been destoryed by the monster Duckside and now there is nothing left but the indestructable *Duckmobile* and *Duck Signal*.
 
+## A Quick And Bad Demonstration
+
+Play showcase1.mp4 and showcase2.mp4
+
 ## How to play
 
 As of the moment, there is no release version. you can copy the files in this repo in a unity project (preferably unity 6) and run the game there.
@@ -51,10 +55,3 @@ the Duckmobile controls are the same as the BatDuck.`LSHIFT` is used as handbrak
 
 * A bicon that displayes the Bat Signal on the sky with subtle movements.
 
-## A Quick And Bad Demonstration
-
-![](./showcase1.mp4)
-<video src="https://github.com/kiasoh/batduck-game/master/showcase1.mp4" controls preload></video>
-
-![](./showcase2.mp4)
-<video src="https://github.com/Kiasoh/batduck-game/showcase2.mp4" controls preload></video>
