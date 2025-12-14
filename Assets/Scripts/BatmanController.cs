@@ -31,6 +31,7 @@ public class BatmanController : MonoBehaviour
     
     [Header("State Info")]
     public BatmanState currentState = BatmanState.Normal;
+    private bool isControlActive = true;
 
     private float currentSpeed;
     void Start()
@@ -46,6 +47,7 @@ public class BatmanController : MonoBehaviour
 
     void Update()
     {
+        if (!isControlActive) return;
         HandleInputForStates();
         HandleMovement();
         if (currentState == BatmanState.Alert)
@@ -53,6 +55,7 @@ public class BatmanController : MonoBehaviour
             HandleAlertFlashingLights();
         }
     }
+    
     /// <summary>
     /// Handles input for changing states.
     /// </summary>
@@ -85,19 +88,16 @@ public class BatmanController : MonoBehaviour
             case BatmanState.Normal:
                 SetAlertLights(false); 
                 StopAlarm();
-                // SetNormalLights(true); 
                 break;
 
             case BatmanState.Stealth:
                 SetAlertLights(false); 
                 StopAlarm();
-                // SetNormalLights(false);
                 break;
 
             case BatmanState.Alert:
                 SetAlertLights(true);
                 PlayAlarm();
-                // SetNormalLights(true); 
                 break;
         }
 
@@ -209,5 +209,12 @@ public class BatmanController : MonoBehaviour
         {
             alarmSource.Stop();
         }
+    }
+    /// <summary>
+    /// Handles control activation
+    /// </summary>
+    public void SetControlActive(bool isActive)
+    {
+        isControlActive = isActive;
     }
 }
