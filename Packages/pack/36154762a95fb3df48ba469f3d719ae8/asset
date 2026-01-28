@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7871333857121815729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8361928771301137435}
+  - component: {fileID: 825068179709156152}
+  m_Layer: 0
+  m_Name: NPC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8361928771301137435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7871333857121815729}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.76, y: 0.52, z: -6.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2663802076555967086}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &825068179709156152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7871333857121815729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2baa22aba0b8d0667a6aa58cb15abdae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrafficCarAI
+  speed: 20
+--- !u!1001 &6319355055830047717
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8361928771301137435}
+    m_Modifications:
+    - target: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.40001556
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.40001556
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.40001556
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00015867
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13899
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.042489
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651048462129904433, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+      propertyPath: m_Name
+      value: oldcar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+--- !u!4 &2663802076555967086 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8306152913667973515, guid: 08ce059380ccecb01b7bce94f8fecb80, type: 3}
+  m_PrefabInstance: {fileID: 6319355055830047717}
+  m_PrefabAsset: {fileID: 0}
