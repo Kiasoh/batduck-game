@@ -12,6 +12,8 @@ Sadly, the city of Duckham has been destoryed by the monster Duckside and now th
 
 Play showcase1.mp4 and showcase2.mp4
 
+Also there is a swim mode (traffic mode) showcased in showcase_3.mp4.
+
 ## How to play
 
 As of the moment, there is no release version. you can copy the files in this repo in a unity project (preferably unity 6) and run the game there.
